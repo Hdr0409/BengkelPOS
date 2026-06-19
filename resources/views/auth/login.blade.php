@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
         body {
@@ -18,67 +18,102 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #f4f4f4;
+            background-color: #F8FAFC; /* Secondary (Light): Off-White Canvas */
+            padding: 20px;
         }
 
         .card {
             width: 100%;
-            max-width: 400px;
-            background: #fff;
-            padding: 24px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,.1);
+            max-width: 420px;
+            background: #FFFFFF; /* Secondary (Pure): Pure White */
+            padding: 40px 32px;
+            border-radius: 12px;
+            border-top: 5px solid #EA580C; /* Accent (Energetik): Otomotif Orange sebagai aksen atas */
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08),
+                        0 8px 10px -6px rgba(15, 23, 42, 0.08); /* Shadow halus ala dashboard modern */
         }
 
         h1 {
             text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
+            color: #0F172A; /* Primary (Dark): Slate Darkest */
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.025em;
             margin-bottom: 6px;
-            font-weight: 600;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            background: #2563eb;
-            color: white;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        .btn:hover {
-            opacity: .9;
-        }
-
-        .error {
-            margin-bottom: 15px;
-            padding: 10px;
-            background: #fee2e2;
-            color: #b91c1c;
-            border-radius: 6px;
         }
 
         .app-name {
             text-align: center;
-            color: #666;
+            color: #64748B; /* Muted / Border: Slate Gray */
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
             margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1E293B; /* Primary (Medium): Slate Steel */
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #CBD5E1; /* Border abu-abu yang soft */
+            border-radius: 8px;
+            background-color: #FFFFFF;
+            color: #0F172A;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* Efek fokus saat input diklik oleh kasir/user */
+        input:focus {
+            border-color: #EA580C; /* Berubah menjadi Otomotif Orange */
+            box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.15); /* Ring bersinar tipis di luar input */
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            background-color: #EA580C; /* Accent (Energetik): Otomotif Orange */
+            color: #FFFFFF; /* Teks Putih Kontras Tinggi */
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.025em;
+            box-shadow: 0 4px 6px -1px rgba(234, 88, 12, 0.2);
+            transition: all 0.2s ease-in-out;
+            margin-top: 8px;
+        }
+
+        .btn:hover {
+            background-color: #C2410C; /* Accent Hover: Deep Orange */
+            box-shadow: 0 4px 12px -1px rgba(194, 65, 12, 0.3);
+        }
+
+        .btn:active {
+            transform: scale(0.98); /* Efek membal saat ditekan klik */
+        }
+
+        .error {
+            margin-bottom: 24px;
+            padding: 12px 16px;
+            background: #FEF2F2; /* Merah soft */
+            color: #DC2626; /* Merah tegas */
+            border-left: 4px solid #EF4444; /* Garis indikator error */
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -104,6 +139,7 @@
                     type="email"
                     name="email"
                     value="{{ old('email') }}"
+                    placeholder="masukkan email terdaftar"
                     required
                 >
             </div>
@@ -113,12 +149,13 @@
                 <input
                     type="password"
                     name="password"
+                    placeholder="••••••••"
                     required
                 >
             </div>
 
             <button type="submit" class="btn">
-                Login
+                Masuk ke Aplikasi
             </button>
         </form>
 
