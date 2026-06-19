@@ -61,9 +61,9 @@
 
                 <ul class="space-y-2 font-medium">
                     <li>
-                        <a href="" class="flex items-center gap-3 px-4 py-3 text-slate-300 rounded-xl transition-all duration-200 hover:bg-slate-800 hover:text-white hover:translate-x-1 {{ request()->routeIs('dashboard') ? 'active-menu text-white' : '' }}">
+                        <a href="/admin/dashboard" class="flex items-center gap-3 px-4 py-3 text-slate-300 rounded-xl transition-all duration-200 hover:bg-slate-800 hover:text-white hover:translate-x-1 {{ request()->routeIs('dashboard') ? 'active-menu text-white' : '' }}">
                             <span class="text-lg">📊</span>
-                            <span>test</span>
+                            <span>Dasboard</span>
                         </a>
                     </li>
                 </ul>

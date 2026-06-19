@@ -16,9 +16,10 @@ Route::post('/logout', [AuthController::class, 'logout'])
 
 //untuk halaman admin
 
-Route::get('/admin/test', function () {
-    return view('coba');
-})->name('admin.test');
+Route::get('/admin/dashboard', function () {
+    return view('dasbor-admin');
+})->name('admin.dashboard');
+
 
 //untuk halaman user
 

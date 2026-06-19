@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    @livewire('admin.test')
+    @livewire('admin.dashboard')
 @endsection
